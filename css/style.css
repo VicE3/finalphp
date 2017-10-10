@@ -1,0 +1,223 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* =================END OF CSS RESET ====================================== */
+
+
+body {
+    font-family:  'Cinzel', serif;
+}
+
+/* CART */
+.cart {
+    color: white;
+    font-size: 50px;
+    display: inline;
+    background-color: white;
+}
+
+.cartContainer {
+    float: right;
+}
+#cartCounter {
+    float: right;
+    color: white;
+}
+/* H1'S */
+h1 {
+   font-size: 80px;
+   text-align: center;
+   margin: 5%;
+}
+
+/* IMAGE */
+img {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+/* NAV BAR */
+.navContainer {  
+    list-style: none;
+    overflow: hidden;
+    background-color: #417213;
+}
+
+ .navContainer li a {
+    float: left;
+    font-size: 30px;
+    padding: 20px;
+    margin: 3px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+} 
+
+nav {
+    position: relative;
+}
+
+/* FOOTER */
+
+footer {
+    clear: both;
+    display: block;
+    background-color: #417213;
+    padding: 25px;
+    text-align: left;
+    color: white;
+}
+
+/* INDEX PAGE */
+
+.indexContainer {
+    margin: 10%;
+}
+
+/* SEARCH PAGE */
+
+
+.searchBtn {
+    border-radius: 50%;
+    background-color: #417213;
+    color: white;
+    height: 50px;
+    width: 50px;
+}
+
+.searchBar {
+    height: 30px;
+    width: 200px;
+}
+
+searchBarAndBtn {
+    margin: 500px;
+    text-align: center;
+}
+
+/* PRODUCTS DETAIL PAGE */
+.productDetailContainer {
+    padding: 20px;
+}
+
+.productDetailContainer p {
+    line-height: 2;
+    text-align: center;
+}
+
+.productDetailImage {
+   text-align: center;
+}
+
+.productTitle {
+    font-weight: bold;
+}
+
+.productName {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* FEATURED PAGE */
+
+.featuredContainer {
+    margin: 20px;
+    float: left;
+    text-align: center;
+}
+
+.featuredContainer p {
+    line-height: 3;
+}
+
+/* PRODUCTS PAGE */
+
+.productContainer {
+    float: left;
+    padding: 20px;
+    margin: 40px;
+}
+
+.productContainer p {
+    line-height: 2;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin: 50px;
+}
+
+.cats {
+    height: 20px;
+    width: 70px;
+}
+
+.filter {
+    color: white;
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: #417213;
+}
+
+/* CONTACT */
+
+.contactField {
+    margin: 25px;
+}
+
+.comment {
+    text-align: center;
+    margin: 30px;
+}
