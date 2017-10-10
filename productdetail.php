@@ -1,16 +1,15 @@
 <?php
+session_start();
+$_SESSION["cartItems"] = $_SESSION["cartItems"] +   $_GET['numOfItems'];
 $pageTitle = "Product Details";
 include("inc/nav.php");
-session_start();
 ?>
 
 <div class="productsDetailContainer">
 
 <?php
   try {
-    $_SESSION["cartItems"] =  $_GET['numOfItems'];
-    $num = $_SESSION["cartItems"];
-    echo $num;
+   
     //creating a new pdo connection
     $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
     //WHERE-- :product_id is a placeholder, eventually we bind it with $_GET[product_id]
@@ -50,6 +49,7 @@ session_start();
 </div>
 <div>
 <form onSubmit="added()" name="addToCart" method="GET" action="productdetail.php">
+    <input type="hidden" name="product_id" value="<?php echo $_GET['product_id']?>">
     <input type="number" id="numOfItems" name="numOfItems">
     <input type="submit" value="Add to cart">
 </form>

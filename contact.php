@@ -1,3 +1,4 @@
+<!-- Add Names -->
 <?php
 $pageTitle = "Contact";
 include("inc/nav.php");
@@ -13,25 +14,25 @@ if(empty($_POST)) {
 </div>
  <div class="contactField">
    <label for="fname"> First name:</label>
-    <input type="text" name="fname">
+    <input type="text" name="fname" id="fname">
   </div>
   <div class="contactField">
     <label for="lname"> Last name: </label> 
-      <input type="text" name="lname">
+      <input type="text" name="lname" id="lname">
   </div>
   <div class="contactField">
     <label for="email"> Email:</label>
-      <input class="space" type="text" name="email"></span>
+      <input class="space" type="text" name="email" id="email"></span>
   </div>  
   <div class="contactField">
     <label for="phone">Phone Number: </label> 
-    <input  class="space" type="text" name="phone">
+    <input  class="space" type="text" name="phone" id="phone">
   </div>
   <div class="contactField">
     <p>Please enter any comments or questions.</p>
   </div>
       <label for="comments">Comments/Questions:</label> 
-      <textarea  name="comments"></textarea>
+      <textarea  name="comments" id="comments"></textarea>
       <input type="submit" value="submit">
 
 </form>
@@ -57,8 +58,8 @@ if(empty($_POST)) {
     $preparedComments->bindParam(':email', strip_tags($_POST['email']));
     $preparedComments->bindParam(':phone', strip_tags($_POST['phone']));
     $preparedComments->execute();
-
-
+//ADD IN NAMESSSSS
+// only select what you want
     $gettingComments = 'SELECT * FROM Contacts ORDER BY contact_id DESC';
     $displayingComments = $db->prepare($gettingComments);
     $displayingComments->execute();
@@ -78,10 +79,7 @@ if(empty($_POST)) {
     exit;
 }
 ?>
-</tr>
-</table>
-</div>
-  </div>
+
 <?php
 include("inc/footer.php");
 ?>

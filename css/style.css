@@ -192,6 +192,11 @@ searchBarAndBtn {
     text-align: center;
 }
 
+.productImage {
+    height: 200px;
+    width: 200px;
+}
+
 form {
     text-align: center;
     margin: 50px;
@@ -219,5 +224,5 @@ form {
 
 .comment {
     text-align: center;
-    margin: 30px;
 }
+

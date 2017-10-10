@@ -29,6 +29,5 @@ function validate() {
      
       var  number =  document.forms['addToCart'] ['numOfItems'].value;
         alert("You have added " + number + " item to your cart");
-        document.getElementById('cartCounter').innerHTML = number;
     }
    

@@ -6,6 +6,7 @@ include("inc/nav.php");
 <h1>Filter by Category</h1>
 <form action="products.php" method="GET">
   <select name="cats" class="cats">
+  <option value="">ALL</option>
     <option value="Pens">Pens</option>
     <option value="Gel Pens">Gel Pens</option>
     <option value="Paper">Papers</option>

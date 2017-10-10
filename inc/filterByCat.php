@@ -5,13 +5,13 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $products = 'SELECT * FROM Products';
     
-    if(!empty($_GET)) { 
+    if(!empty($_GET['cats'])) { 
         $products = $products . ' WHERE product_cat= :cats ';
     }
     //prepare() preps a statement, in this case it is $products, for execution and returns a statement object
     $prepared = $db->prepare($products);
     
-    if(!empty($_GET)) {
+    if(!empty($_GET['cats'])) {
         $prepared->bindParam(':cats', $_GET['cats']);
     }
    
