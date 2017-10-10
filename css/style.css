@@ -55,15 +55,16 @@ body {
 
 /* CART */
 .cart {
-    color: white;
+    color: black;
     font-size: 50px;
     display: inline;
     background-color: white;
+    float: right;
+    position: relative;
+    top: 50px;
 }
 
-.cartContainer {
-    float: right;
-}
+
 #cartCounter {
     float: right;
     color: white;
@@ -193,8 +194,8 @@ searchBarAndBtn {
 }
 
 .productImage {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
 }
 
 form {
@@ -224,5 +225,19 @@ form {
 
 .comment {
     text-align: center;
+    /* 3 * font size = the line-height */
+    line-height: 3;
+    width: 100%;
 }
 
+/* SLIDER */
+.fotorama {
+    margin: auto;
+    height: 75%;
+    width: 75%;
+}
+
+.fotorama img {
+    height: 100%;
+    width: 100%;
+}

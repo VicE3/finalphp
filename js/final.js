@@ -23,6 +23,9 @@ function validate() {
       }
     
     }
+$("formval").ready(function() {
+  $("formval").validate();
+})
 
     
     function added() {

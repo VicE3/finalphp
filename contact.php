@@ -3,12 +3,14 @@
 $pageTitle = "Contact";
 include("inc/nav.php");
 ?>
+
+
 <?php
 if(empty($_POST)) {
 ?>
 
 <h1>Contact</h1>
-    <form onSubmit="" name="formval" method="POST" action="contact.php">
+    <form onSubmit="return validate()" name="formval" method="POST" action="contact.php">
    <div class="contactField"> 
 <p>Please fill out this form in order to be contacted or to leave a comment</p>
 </div>
@@ -66,13 +68,15 @@ if(empty($_POST)) {
     
    foreach($displayingComments->fetchAll() as $comm) {
     
+    if(!empty($_POST)) {
+     
     echo "
-    <div>
-      <p class=comment>{$comm['comments']}</p>
+    <div class=comment>
+      <p class=comment>{$comm['fname']} said {$comm['comments']}</p>
     </div>
     ";
     }
-
+  }
     // if an exception occurs, it will get passed to the catch block and php will execute the code inside the catch block
 } catch (Exception $e) {
     echo $e->getMessage();

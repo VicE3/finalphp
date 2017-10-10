@@ -1,9 +1,14 @@
 <?php
 $pageTitle ="Home";
-
 include("inc/nav.php");
 ?>
 <h1>Featured Items</h1>
+<div class="fotorama">
+    <img src="img/office.jpg">
+    <img src="img/pencils.jpeg">
+    <img src="img/laptop.jpeg">
+</div>
+
 <div class="indexContainer">
 <?php
 
