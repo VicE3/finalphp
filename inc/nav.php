@@ -21,6 +21,6 @@ session_start();
       <li class="contact"><a href="contact.php">Contact</a></li>
     </ul>
   </nav>
-      <span class="cart">🛒 <?php echo $_SESSION["cartItems"];?></span>
+      <span class="cart">🛒 <?php echo $_SESSION['cartItems'];?></span>
 </div>
   

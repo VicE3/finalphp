@@ -3,7 +3,7 @@
 $product_id = !empty($_GET['product_id']) ? $_GET['product_id'] : '';
 
 session_start();
-$_SESSION["cartItems"] = $_SESSION["cartItems"] +  $_GET['numOfItems'];
+$_SESSION['cartItems'] = $_SESSION['cartItems'] +  $_GET['numOfItems'];
 $pageTitle = "Product Details";
 include("inc/nav.php");
 ?>
