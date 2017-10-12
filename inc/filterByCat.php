@@ -42,7 +42,7 @@ try {
 
     // if an exception occurs, it will get passed to the catch block and php will execute the code inside the catch block
 } catch (Exception $e) {
-    echo $e->getMessage();
+    echo "Sorry this page is not working, Please try again later.";
     exit;
 }
 ?>

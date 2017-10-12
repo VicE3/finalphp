@@ -71,8 +71,8 @@ echo "
 
 
 } catch (Exception $e) {
-echo $e->getMessage();
-exit;
+   echo "Sorry this page is not working, Please try again later.";
+   exit;
 
 }
 
