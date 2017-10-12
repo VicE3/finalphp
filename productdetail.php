@@ -5,7 +5,7 @@ $pageTitle = "Product Details";
 include("inc/nav.php");
 ?>
 
-<div class="productsContainer">
+<div class="productsDetailContainer">
 
 <?php
   try {
