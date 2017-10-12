@@ -23,6 +23,7 @@ function validate() {
       }
     
     }
+
 $("formval").ready(function() {
   $("formval").validate();
 })
@@ -31,6 +32,6 @@ $("formval").ready(function() {
     function added() {
      
       var  number =  document.forms['addToCart'] ['numOfItems'].value;
-        alert("You have added " + number + " item to your cart");
+        alert("You have added " + number + " items to your cart");
     }
    

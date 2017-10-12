@@ -212,10 +212,22 @@ nav {
 }
 
 .searchBtn {
+    background-color: #417213;
     border: 1px solid black;
+    color: white;
     border-radius: 80%;
     margin: 0 0 0 43%;
 }
+
+.priceFilter {
+    margin: 0 0 3% 38%;
+}
+
+#priceFilter {
+    border: 1px solid black;
+    display: block;
+}
+
 
 .productSearchContainer {
     text-align: center;
@@ -402,7 +414,9 @@ footer {
 }
 
 .searchBtn {
-    margin: 0 0 0 49%;
+    background-color:#417213;
+    color: white; 
+    margin: 3% 0 0 49%;
 }
 
 .productSearchContainer {

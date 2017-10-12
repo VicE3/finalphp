@@ -1,22 +1,27 @@
 <?php
 $pageTitle = "Search";
 include("inc/nav.php");
+
+$priceFilter = !empty($_GET['priceFilter']) ? $_GET['priceFilter'] : '';
+$searchName = !empty($_GET['searchName']) ? $_GET['searchName'] : '';
 ?>
 <h1>Search for a product</h1>
 <form action="search.php" method="GET" class="searchForm">
     <label for="searchName" class="searchLabel">Product Search</label>
-    <input type="text" name="searchName" id="searchName" class="searchName">
-    <label for="priceFilter"></label>
-    <select id="priceFilter" name="priceFilter">
-        <option></option>
-        <option value="05-20">$5-$20</option>
-        <option value="21-45">$21-$45</option>
-    </select>
+        <input type="text" name="searchName" id="searchName" class="searchName">
+<div class="priceFilter">
+    <label for="priceFilter">Price Filter</label>
+        <select id="priceFilter" name="priceFilter">
+            <option></option>
+            <option value="05-20">$5-$20</option>
+            <option value="21-45">$21-$45</option>
+        </select>
+</div>
     <input type="submit" value="Submit" class="searchBtn">
 </form>
 <?php
 try {
-$db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
+$db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
 //If there are any errors this line will show you them
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -27,16 +32,16 @@ $products = "SELECT * FROM Products WHERE (product_name LIKE :userSearchName OR 
 
 //split the option at the dash, use strpos to find the first time we see "dash"
 //start at $_GET[priceFilter], keep going till you find the dash
-$splitOption = strpos($_GET['priceFilter'], "-");
+$splitOption = strpos($priceFilter, "-");
 
 //substr finds part of a string, you tell it where to start and how far to go
-$splitMin = substr($_GET['priceFilter'], 0, 2);
+$splitMin = substr($priceFilter, 0, 2);
 
-$splitMax = substr($_GET['priceFilter'], $splitOption + 1, 2);
+$splitMax = substr($priceFilter, $splitOption + 1, 2);
 
 $prepared = $db->prepare($products);
 
-$theSearch = '%'. strip_tags($_GET['searchName']) . '%';
+$theSearch = '%'. strip_tags($searchName) . '%';
 
 $prepared->bindParam(':userSearchName', $theSearch);
 $prepared->bindParam(':userSearchDescript', $theSearch);

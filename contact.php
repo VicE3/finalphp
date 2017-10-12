@@ -1,5 +1,12 @@
 <!-- Add Names -->
 <?php
+$comment = !empty($_POST['comments']) ? $_POST['comments'] : '';
+$fname = !empty($_POST['fname']) ? $_POST['fname'] : '';
+$lname = !empty($_POST['lname']) ? $_POST['lname'] : '';
+$email = !empty($_POST['email']) ? $_POST['email'] : '';
+$phone = !empty($_POST['phone']) ? $_POST['phone'] : '';
+
+
 $pageTitle = "Contact";
 include("inc/nav.php");
 ?>
@@ -10,32 +17,21 @@ if(empty($_POST)) {
 ?>
 
 <h1>Contact</h1>
-    <form onSubmit="return validate()" name="formval" method="POST" action="contact.php" class="contactForm">
-   
-<p>Please fill out this form in order to be contacted or to leave a comment</p>
-
- 
-   <label for="fname"> First name</label>
+  <form onSubmit="return validate()" name="formval" method="POST" action="contact.php" class="contactForm">
+   <p>Please fill out this form in order to be contacted or to leave a comment</p>
+  <label for="fname"> First name</label>
     <input class="contactBox" type="text" name="fname" id="fname">
-  
-  
-    <label for="lname"> Last name </label> 
+  <label for="lname"> Last name </label> 
       <input class="contactBox" name="lname" id="lname">
-  
-  
-    <label for="email"> Email</label>
+  <label for="email"> Email</label>
       <input class="contactBox" type="text" name="email" id="email">
-  
-    <label for="phone">Phone Number</label> 
+  <label for="phone">Phone Number</label> 
     <input  class="contactBox" type="text" name="phone" id="phone">
- 
-    <p>Please enter any comments or questions.</p>
-  
-      <label for="comments">Comments/Questions</label> 
+  <p>Please enter any comments or questions.</p>
+  <label for="comments">Comments/Questions</label> 
       <textarea class="contactBox" name="comments" id="comments"></textarea>
-      <input type="submit" value="submit" class="contactSubmit">
-
-</form>
+  <input type="submit" value="submit" class="contactSubmit">
+  </form>
 <div class="commentContainer">
 <?php } else {
   ?>
@@ -44,7 +40,7 @@ if(empty($_POST)) {
 ?>    
     <?php
     try {
-    $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
+    $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
     //If there are any errors this line will show you them
     // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $comments = 'INSERT INTO Contacts (comments, fname, lname, email, phone) VALUES (:comments, :fname, :lname, :email, :phone )';
@@ -53,11 +49,11 @@ if(empty($_POST)) {
     //prepare() preps a statement, in this case it is $products, for execution and returns a statement object
     $preparedComments = $db->prepare($comments);
     
-    $preparedComments->bindParam(':comments', strip_tags($_POST['comments']));
-    $preparedComments->bindParam(':fname', strip_tags($_POST['fname']));
-    $preparedComments->bindParam(':lname', strip_tags($_POST['lname']));
-    $preparedComments->bindParam(':email', strip_tags($_POST['email']));
-    $preparedComments->bindParam(':phone', strip_tags($_POST['phone']));
+    $preparedComments->bindParam(':comments', strip_tags($comment));
+    $preparedComments->bindParam(':fname', strip_tags($fname));
+    $preparedComments->bindParam(':lname', strip_tags($lname));
+    $preparedComments->bindParam(':email', strip_tags($email));
+    $preparedComments->bindParam(':phone', strip_tags($phone));
     $preparedComments->execute();
 //ADD IN NAMESSSSS
 // only select what you want

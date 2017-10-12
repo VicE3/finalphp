@@ -1,6 +1,9 @@
 <?php
+$cats = !empty($_GET['cats']) ? $_GET['cats'] : '';
+
+
 try {
-    $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
+    $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
     //If there are any errors this line will show you them
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $products = 'SELECT * FROM Products';
@@ -12,7 +15,7 @@ try {
     $prepared = $db->prepare($products);
     
     if(!empty($_GET['cats'])) {
-        $prepared->bindParam(':cats', $_GET['cats']);
+        $prepared->bindParam(':cats', $cats);
     }
    
 
@@ -24,11 +27,15 @@ try {
        //page I can use the id to $_GET['product_id'] all the info associated with that product. 
     echo "
     <div class=productContainer>
-    <div class=productImage><a href=\"productdetail.php?product_id={$cat['product_id']}\"><img class=\"pics\" src=\"img/{$cat['product_image']}\" alt=\"{$cat['product_name']}\"></a></div>
-    <p class=productName>{$cat['product_name']}</p>
-    <p>{$cat['product_descript']}</p>
-    <p>\${$cat['product_price']}</p>
-    <p>{$cat['product_cat']}</p>
+        <div class=productImage>
+            <a href=\"productdetail.php?product_id={$cat['product_id']}\">
+                <img class=\"pics\" src=\"img/{$cat['product_image']}\" alt=\"{$cat['product_name']}\">
+            </a>
+        </div>
+        <p class=productName>{$cat['product_name']}</p>
+        <p>{$cat['product_descript']}</p>
+        <p>\${$cat['product_price']}</p>
+        <p>{$cat['product_cat']}</p>
     </div>
     ";
     }
