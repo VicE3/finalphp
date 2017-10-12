@@ -36,7 +36,7 @@ if(empty($_POST)) {
 <?php } else {
   ?>
 
-<? }
+<?php }
 ?>    
     <?php
     try {
