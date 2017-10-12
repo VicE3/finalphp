@@ -6,6 +6,12 @@ include("inc/nav.php");
 <form action="search.php" method="GET" class="searchForm">
     <label for="searchName" class="searchLabel">Product Search</label>
     <input type="text" name="searchName" id="searchName" class="searchName">
+    <label for="priceFilter"></label>
+    <select id="priceFilter" name="priceFilter">
+        <option></option>
+        <option value="05-20">$5-$20</option>
+        <option value="21-45">$21-$45</option>
+    </select>
     <input type="submit" value="Submit" class="searchBtn">
 </form>
 <?php
@@ -16,8 +22,17 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 if(isset($_GET['searchName'])) {
-$products = "SELECT * FROM Products WHERE product_name LIKE :userSearchName OR product_descript LIKE :userSearchDescript OR product_price LIKE :userSearchPrice
+$products = "SELECT * FROM Products WHERE (product_name LIKE :userSearchName OR product_descript LIKE :userSearchDescript OR product_price LIKE :userSearchPrice) AND product_price <= :maxPrice AND product_price >= :minPrice ORDER BY product_price
 ";
+
+//split the option at the dash, use strpos to find the first time we see "dash"
+//start at $_GET[priceFilter], keep going till you find the dash
+$splitOption = strpos($_GET['priceFilter'], "-");
+
+//substr finds part of a string, you tell it where to start and how far to go
+$splitMin = substr($_GET['priceFilter'], 0, 2);
+
+$splitMax = substr($_GET['priceFilter'], $splitOption + 1, 2);
 
 $prepared = $db->prepare($products);
 
@@ -26,6 +41,9 @@ $theSearch = '%'. strip_tags($_GET['searchName']) . '%';
 $prepared->bindParam(':userSearchName', $theSearch);
 $prepared->bindParam(':userSearchDescript', $theSearch);
 $prepared->bindParam(':userSearchPrice', $theSearch);
+$prepared->bindParam(':maxPrice', strip_tags($splitMax));
+$prepared->bindParam(':minPrice', strip_tags($splitMin));
+
 
 $prepared->execute();
 foreach($prepared->fetchAll() as $cat) {
