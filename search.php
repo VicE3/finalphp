@@ -3,15 +3,10 @@ $pageTitle = "Search";
 include("inc/nav.php");
 ?>
 <h1>Search for a product</h1>
-<form action="search.php" method="GET" class="searchpg">
-    <div>
-        <div>
-
-<label for="searchName">Product Search</label>
-<input type="text" name="searchName" id="searchName" class="searchName">
-</div>
-<input type="submit" value="Submit" class="searchBtn">
-</div>
+<form action="search.php" method="GET" class="searchForm">
+    <label for="searchName" class="searchLabel">Product Search</label>
+    <input type="text" name="searchName" id="searchName" class="searchName">
+    <input type="submit" value="Submit" class="searchBtn">
 </form>
 <?php
 try {
@@ -36,17 +31,18 @@ $prepared->execute();
 foreach($prepared->fetchAll() as $cat) {
 
 echo "
-    <div class=productContainer>
-        <div class=productImage>
-            <a href=\"productdetail.php?product_id={$cat['product_id']}\"><img class=\"pics\" src=\"img/{$cat['product_image']}\" alt=\"{$cat['product_name']}\"></a>
+    <div class=productSearchContainer>
+        <div class=productSearchImage>
+            <a href=\"productdetail.php?product_id={$cat['product_id']}\">
+                <img class=\"pics\" src=\"img/{$cat['product_image']}\" alt=\"{$cat['product_name']}\">
+            </a>
         </div>
-        <p class=productName>{$cat['product_name']}</p>
+        <p class=productSearchName>{$cat['product_name']}</p>
         <p>{$cat['product_descript']}</p>
         <p>\${$cat['product_price']}</p>
         <p>{$cat['product_cat']}</p>
     </div>
 ";
-
 }
 }
 

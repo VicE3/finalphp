@@ -2,12 +2,13 @@
 $pageTitle ="Home";
 include("inc/nav.php");
 ?>
-<h1>Featured Items</h1>
 <div class="fotorama">
-    <img src="img/office.jpg">
-    <img src="img/pencils.jpeg">
-    <img src="img/laptop.jpeg">
+    <img src="img/office.jpg" alt="office">
+    <img src="img/pencils.jpeg" alt="pencils">
+    <img src="img/laptop.jpeg" alt="laptop">
 </div>
+<h1>Featured Items</h1>
+
 
 <div class="indexContainer">
 <?php
@@ -30,7 +31,7 @@ include("inc/nav.php");
     echo "
     <div class=featuredContainer>
     <div class=featuredImage><a href=\"productdetail.php?product_id={$cat['product_id']}\"><img class=\"pics\" src=\"img/{$cat['product_image']}\" alt=\"{$cat['product_name']}\"></a></div>
-    <p>{$cat['product_name']}</p>
+    <p class=featuredName>{$cat['product_name']}</p>
     <p>{$cat['product_descript']}</p>
     <p>\${$cat['product_price']}</p>
     <p>{$cat['product_cat']}</p>

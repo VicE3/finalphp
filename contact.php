@@ -10,34 +10,33 @@ if(empty($_POST)) {
 ?>
 
 <h1>Contact</h1>
-    <form onSubmit="return validate()" name="formval" method="POST" action="contact.php">
-   <div class="contactField"> 
+    <form onSubmit="return validate()" name="formval" method="POST" action="contact.php" class="contactForm">
+   
 <p>Please fill out this form in order to be contacted or to leave a comment</p>
-</div>
- <div class="contactField">
-   <label for="fname"> First name:</label>
-    <input type="text" name="fname" id="fname">
-  </div>
-  <div class="contactField">
-    <label for="lname"> Last name: </label> 
-      <input type="text" name="lname" id="lname">
-  </div>
-  <div class="contactField">
-    <label for="email"> Email:</label>
-      <input class="space" type="text" name="email" id="email"></span>
-  </div>  
-  <div class="contactField">
-    <label for="phone">Phone Number: </label> 
-    <input  class="space" type="text" name="phone" id="phone">
-  </div>
-  <div class="contactField">
+
+ 
+   <label for="fname"> First name</label>
+    <input class="contactBox" type="text" name="fname" id="fname">
+  
+  
+    <label for="lname"> Last name </label> 
+      <input class="contactBox" name="lname" id="lname">
+  
+  
+    <label for="email"> Email</label>
+      <input class="contactBox" type="text" name="email" id="email">
+  
+    <label for="phone">Phone Number</label> 
+    <input  class="contactBox" type="text" name="phone" id="phone">
+ 
     <p>Please enter any comments or questions.</p>
-  </div>
-      <label for="comments">Comments/Questions:</label> 
-      <textarea  name="comments" id="comments"></textarea>
-      <input type="submit" value="submit">
+  
+      <label for="comments">Comments/Questions</label> 
+      <textarea class="contactBox" name="comments" id="comments"></textarea>
+      <input type="submit" value="submit" class="contactSubmit">
 
 </form>
+<div class="commentContainer">
 <?php } else {
   ?>
 
@@ -68,22 +67,23 @@ if(empty($_POST)) {
     
    foreach($displayingComments->fetchAll() as $comm) {
     
-    if(!empty($_POST)) {
-     
+    
+     if(!empty($_POST)) { 
     echo "
     <div class=comment>
       <p class=comment>{$comm['fname']} said {$comm['comments']}</p>
     </div>
     ";
-    }
+     }
   }
+
     // if an exception occurs, it will get passed to the catch block and php will execute the code inside the catch block
 } catch (Exception $e) {
     echo $e->getMessage();
     exit;
 }
+  
 ?>
-
 <?php
 include("inc/footer.php");
 ?>

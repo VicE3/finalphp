@@ -53,49 +53,54 @@ body {
     font-family:  'Cinzel', serif;
 }
 
-/* CART */
-.cart {
-    color: black;
-    font-size: 50px;
-    display: inline;
-    background-color: white;
-    float: right;
-    position: relative;
-    top: 50px;
-}
-
-
-#cartCounter {
-    float: right;
-    color: white;
-}
-/* H1'S */
 h1 {
-   font-size: 80px;
-   text-align: center;
-   margin: 5%;
-}
+    font-weight: bold;
+    /* em -> relative to the current font size. So this say 2 times bigger than default size */
+    font-size: 2em;
+    text-align: center;
+    margin: 15%;
+ }
 
-/* IMAGE */
+ .fotorama {
+     margin: 7% 7% 0 7%;
+
+ }
+
+
+ /* IMAGE */
 img {
     width: 200px;
     height: 200px;
 }
 
 
+/* CART */
+.cart {
+    color: black;
+    font-size: 1.5em;
+    display: inline-block;
+    background-color: white;
+    float: right;
+    position: relative;
+    margin-top: 2%;
+}
+
+
+#cartCounter {
+    float: right;
+}
 
 /* NAV BAR */
+
 .navContainer {  
     list-style: none;
     overflow: hidden;
     background-color: #417213;
+    text-align: center;
 }
 
  .navContainer li a {
-    float: left;
-    font-size: 30px;
-    padding: 20px;
-    margin: 3px;
+    font-size: 1.25em;
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -103,141 +108,318 @@ img {
 
 } 
 
+.navContainer li {
+    margin-top: 3%;
+}
+
 nav {
     position: relative;
 }
 
-/* FOOTER */
 
-footer {
-    clear: both;
-    display: block;
-    background-color: #417213;
-    padding: 25px;
-    text-align: left;
-    color: white;
-}
-
-/* INDEX PAGE */
+/* INDEX */
 
 .indexContainer {
-    margin: 10%;
-}
-
-/* SEARCH PAGE */
-
-
-.searchBtn {
-    border-radius: 50%;
-    background-color: #417213;
-    color: white;
-    height: 50px;
-    width: 50px;
-}
-
-.searchBar {
-    height: 30px;
-    width: 200px;
-}
-
-searchBarAndBtn {
-    margin: 500px;
     text-align: center;
+    line-height: 1.5;
 }
 
-/* PRODUCTS DETAIL PAGE */
-.productDetailContainer {
-    padding: 20px;
+.featuredContainer {
+    margin-bottom: 3%;
 }
 
-.productDetailContainer p {
-    line-height: 2;
-    text-align: center;
-}
-
-.productDetailImage {
-   text-align: center;
-}
-
-.productTitle {
-    font-weight: bold;
-}
-
-.productName {
-    font-weight: bold;
+.featuredName {
     text-decoration: underline;
 }
 
-/* FEATURED PAGE */
 
-.featuredContainer {
-    margin: 20px;
-    float: left;
-    text-align: center;
-}
-
-.featuredContainer p {
-    line-height: 3;
-}
 
 /* PRODUCTS PAGE */
 
-.productContainer {
-    float: left;
-    padding: 20px;
-    margin: 40px;
-}
-
-.productContainer p {
-    line-height: 2;
-    text-align: center;
-}
-
-.productImage {
-    height: 100%;
-    width: 100%;
-}
-
-form {
-    text-align: center;
-    margin: 50px;
-}
-
 .cats {
-    height: 20px;
-    width: 70px;
+    border: 1px solid black;
+    margin: 3%;
+}
+
+.filterForm {
+    text-align: center;
 }
 
 .filter {
-    color: white;
-    height: 60px;
-    width: 60px;
     border: 1px solid black;
     border-radius: 100%;
     background-color: #417213;
+    color: white;
 }
 
-/* CONTACT */
-
-.contactField {
-    margin: 25px;
+.productsContainer {
+    text-align: center;
 }
+
+.productContainer {
+    margin-top: 3%;
+    margin-bottom: 3%; 
+}
+
+.productName {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* PRODUCT DETAIL PAGE */
+
+.productTitle {
+    margin: 5%;
+}
+
+#productDetailContainer {
+    line-height: 1.25;
+}
+
+.productDetailImage {
+    margin-bottom: 5%;
+}
+
+.addToCart {
+    margin: 5%;
+    text-align: center;
+}
+
+.number {
+    border: 1px solid black;
+}
+
+.addToCartSubmitBtn {
+    border: 1px solid black;
+    border-radius: 80%;
+    background-color: #417213;
+    color: white;
+}
+
+/* SEARCH */
+
+.searchLabel {
+    font-size: .85em;
+    margin: 0 0 0 37%;
+}
+
+.searchName {
+    border: 1px solid black;
+    display: block;
+    margin: 0 0 3% 36%;
+}
+
+.searchBtn {
+    border: 1px solid black;
+    border-radius: 80%;
+    margin: 0 0 0 43%;
+}
+
+.productSearchContainer {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%; 
+}
+
+.productSearchName {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* CONTACT PAGE */
+
+.contactForm {
+    text-align: center;
+    line-height: 2;
+
+}
+
+.contactBox {
+    display: block;
+    border: 1px solid black;
+    margin: 0 0 3% 38%;
+}
+
+.contactSubmit {
+    border: 1px solid black;
+    background-color:#417213;
+    color: white;
+}
+
+
+
+/* COMMENTS PAGE */
 
 .comment {
     text-align: center;
-    /* 3 * font size = the line-height */
-    line-height: 3;
+    margin: 3%;
+}
+
+
+
+
+/* FOOTER */
+
+footer {
+    background-color: #417213;
+    color: white;
+    padding: 5%;
     width: 100%;
 }
 
-/* SLIDER */
-.fotorama {
-    margin: auto;
-    height: 75%;
-    width: 75%;
+/* MEDIA QUERY FOR PAGE LARGER THAN 800PX */
+
+@media only screen and (min-width: 800px) {
+
+    h1 {
+        font-weight: bold;
+        /* em -> relative to the current font size. So this say 2 times bigger than default size */
+        font-size: 4em;
+        text-align: center;
+        margin: 7%;
+     }
+    
+     .fotorama {
+         margin: 7% 17% 0 17%;
+    
+     }
+    
+    
+     /* IMAGE */
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    
+    /* CART */
+    .cart {
+        color: black;
+        font-size: 1.5em;
+        display: inline-block;
+        background-color: white;
+        float: right;
+        position: relative;
+        margin-top: 2%;
+    }
+    
+    
+    #cartCounter {
+        float: right;
+    }
+    
+    /* NAV BAR */
+    
+    .navContainer {  
+        list-style: none;
+        overflow: hidden;
+        background-color: #417213;
+    }
+    
+     .navContainer li a {
+        font-size: 2em;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        float: left;
+        margin: 3%;
+    
+    } 
+    
+    .navContainer li {
+        margin-top: 3%;
+    }
+    
+    nav {
+        position: relative;
+    }
+    
+    
+    INDEX
+    
+    .indexContainer {
+        text-align: center;
+        line-height: 1.5;
+    }
+    
+    .featuredContainer {
+        float: left;
+        margin: 5%;
+        margin-bottom: 3%;
+    }
+    
+    .featuredName {
+        text-decoration: underline;
+    }
+    
+    
+
+    /* PRODUCTS PAGE */
+
+.cats {
+    border: 1px solid black;
+    margin: 3%;
 }
 
-.fotorama img {
-    height: 100%;
-    width: 100%;
+.productsContainer {
+    text-align: center;
+}
+
+.productContainer {
+    float: left;
+    margin: 5%;
+}
+
+
+
+/* SEARCH */
+
+.searchLabel {
+    font-size: 1.25em;
+    margin: 0 0 0 42.5%;
+}
+
+.searchName {
+    margin: 0 0 3% 45%;
+}
+
+.searchBtn {
+    margin: 0 0 0 49%;
+}
+
+.productSearchContainer {
+   float: left;
+   margin: 3%;
+}
+
+.productSearchName {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+
+/* CONTACT PAGE */
+
+.contactBox {
+    display: block;
+    margin: 0 0 3% 43%;
+}
+
+.contactSubmit {
+    border: 1px solid black;
+    background-color:#417213;
+    color: white;
+}
+
+
+
+
+
+
+    /* FOOTER */
+    footer {
+        clear: both;
+        margin-top: 5%;
+    }
 }
