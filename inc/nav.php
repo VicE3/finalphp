@@ -1,4 +1,3 @@
-<!-- move to own file -->
 <?php 
 session_start();
 ?>
@@ -6,16 +5,7 @@ session_start();
 <html>
  <head>
  <link rel="stylesheet" href="css/style.css" type="text/css">
-<!-- 1. Link to jQuery (1.8 or later), -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
-
-<!-- fotorama.css & fotorama.js. -->
-<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-  
-  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-  <script src="js/final.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 <title><?php echo $pageTitle; ?></title>
@@ -31,6 +21,6 @@ session_start();
       <li class="contact"><a href="contact.php">Contact</a></li>
     </ul>
   </nav>
-      <div class="cart">🛒 <?php echo $_SESSION["cartItems"];?></div>
+      <span class="cart">🛒 <?php echo $_SESSION["cartItems"];?></span>
 </div>
   

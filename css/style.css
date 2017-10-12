@@ -323,11 +323,10 @@ footer {
         font-weight: bold;
         float: left;
         margin: 3%;
-    
     } 
     
     .navContainer li {
-        margin-top: 3%;
+        margin-top: 3%;       
     }
     
     nav {
@@ -338,14 +337,12 @@ footer {
     INDEX
     
     .indexContainer {
-        text-align: center;
-        line-height: 1.5;
+        text-align: center;       
     }
     
     .featuredContainer {
         float: left;
-        margin: 5%;
-        margin-bottom: 3%;
+        margin: 0 3% 3% 5%;
     }
     
     .featuredName {
@@ -363,11 +360,12 @@ footer {
 
 .productsContainer {
     text-align: center;
+    line-height: 2;
 }
 
 .productContainer {
     float: left;
-    margin: 5%;
+    margin: 3% 3% 0 5%;
 }
 
 
