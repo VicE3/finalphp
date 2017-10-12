@@ -80,6 +80,8 @@ if(empty($_POST)) {
 }
   
 ?>
+</div>
+
 <?php
 include("inc/footer.php");
 ?>

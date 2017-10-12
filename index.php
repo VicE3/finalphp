@@ -13,8 +13,8 @@ include("inc/nav.php");
 
   try {
     $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
-    //If there are any errors this line will show you them
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // //If there are any errors this line will show you them
+    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $products = 'SELECT product_image, product_name, product_descript, product_price, product_cat, product_id FROM Products WHERE is_featured= "FT"';
     
     //prepare() preps a statement, in this case it is $products, for execution and returns a statement object
