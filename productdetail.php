@@ -1,9 +1,10 @@
 <?php
 $numOfItems = !empty($_GET['numOfItems']) ? $_GET['numOfItems'] : '';
 $product_id = !empty($_GET['product_id']) ? $_GET['product_id'] : '';
-if (!empty($_SESSION['cartItems'] = $_SESSION['cartItems'] +  $numOfItems));
+
 $pageTitle = "Product Details";
 include("inc/nav.php");
+$_SESSION['cartItems'] = $_SESSION['cartItems'] +  $numOfItems;
 ?>
 
 <div class="productsDetailContainer">
