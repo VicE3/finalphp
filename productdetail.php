@@ -1,15 +1,12 @@
 <?php
 $numOfItems = !empty($_GET['numOfItems']) ? $_GET['numOfItems'] : '';
 $product_id = !empty($_GET['product_id']) ? $_GET['product_id'] : '';
-
-session_start();
 $_SESSION['cartItems'] = $_SESSION['cartItems'] +  $numOfItems;
 $pageTitle = "Product Details";
 include("inc/nav.php");
 ?>
 
 <div class="productsDetailContainer">
-
 <?php
   try {
    

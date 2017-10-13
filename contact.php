@@ -1,5 +1,5 @@
-<!-- Add Names -->
 <?php
+
 $comment = !empty($_POST['comments']) ? $_POST['comments'] : '';
 $fname = !empty($_POST['fname']) ? $_POST['fname'] : '';
 $lname = !empty($_POST['lname']) ? $_POST['lname'] : '';
