@@ -5,12 +5,12 @@ include("inc/nav.php");
 $priceFilter = !empty($_GET['priceFilter']) ? $_GET['priceFilter'] : '';
 $searchName = !empty($_GET['searchName']) ? $_GET['searchName'] : '';
 ?>
-<h1>Search for a product</h1>
+<h1 class="searchh1">Search for a product</h1>
 <form action="search.php" method="GET" class="searchForm">
     <label for="searchName" class="searchLabel">Product Search</label>
         <input type="text" name="searchName" id="searchName" class="searchName">
 <div class="priceFilter">
-    <label for="priceFilter">Price Filter</label>
+    <label for="priceFilter" class="priceTitle">Price Filter</label>
         <select id="priceFilter" name="priceFilter">
             <option></option>
             <option value="05-20">$5-$20</option>
@@ -22,6 +22,7 @@ $searchName = !empty($_GET['searchName']) ? $_GET['searchName'] : '';
 <?php
 try {
 $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
+// $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
 //If there are any errors this line will show you them
 // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

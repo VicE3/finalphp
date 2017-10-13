@@ -10,6 +10,7 @@ include("inc/nav.php");
    
     //creating a new pdo connection
     $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
+    // $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
     //WHERE-- :product_id is a placeholder, eventually we bind it with $_GET[product_id]
     $productDetail = 'SELECT * FROM Products WHERE product_id= :product_id';
 

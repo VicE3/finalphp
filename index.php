@@ -13,6 +13,7 @@ include("inc/nav.php");
 
   try {
     $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
+    // $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
     // //If there are any errors this line will show you them
     // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $products = 'SELECT product_image, product_name, product_descript, product_price, product_cat, product_id FROM Products WHERE is_featured= "FT"';

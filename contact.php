@@ -41,6 +41,7 @@ if(empty($_POST)) {
     <?php
     try {
     $db = new PDO('mysql:dbname=vechevarria_challenge;host=localhost', 'r2hstudent', 'SbFaGzNgGIE8kfP');
+    // $db = new PDO('mysql:dbname=finalphpProject;host=localhost', 'root', 'root');
     //If there are any errors this line will show you them
     // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $comments = 'INSERT INTO Contacts (comments, fname, lname, email, phone) VALUES (:comments, :fname, :lname, :email, :phone )';
