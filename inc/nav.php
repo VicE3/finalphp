@@ -1,5 +1,7 @@
 <?php 
 session_start();
+$numOfItems = !empty($_GET['numOfItems']) ? $_GET['numOfItems'] : '';
+$_SESSION['cartItems'] = $_SESSION['cartItems'] +  $numOfItems;
 ?>
 <!DOCTYPE html>
 <html>
