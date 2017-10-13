@@ -12,7 +12,7 @@ $searchName = !empty($_GET['searchName']) ? $_GET['searchName'] : '';
 <div class="priceFilter">
     <label for="priceFilter" class="priceTitle">Price Filter</label>
         <select id="priceFilter" name="priceFilter">
-            <option></option>
+            <option value="05-45">All Prices</option>
             <option value="05-20">$5-$20</option>
             <option value="21-45">$21-$45</option>
         </select>
